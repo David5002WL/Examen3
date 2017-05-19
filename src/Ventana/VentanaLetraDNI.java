@@ -6,6 +6,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
 
 
 /*
@@ -18,6 +22,8 @@ import javax.swing.border.EmptyBorder;
 public class VentanaLetraDNI extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
 
 
 
@@ -29,8 +35,26 @@ public class VentanaLetraDNI extends JFrame {
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
+		
+		JLabel lblIntroduceDni = new JLabel("Introduce DNI");
+		contentPane.add(lblIntroduceDni);
+		
+		textField = new JTextField();
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("Letra DNI Calculada");
+		contentPane.add(lblNewLabel);
+		
+		textField_1 = new JTextField();
+		textField_1.setEditable(false);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Calcular");
+		contentPane.add(btnNewButton);
 	}
 
 }
